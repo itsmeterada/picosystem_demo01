@@ -21,7 +21,7 @@ struct fixed_point {
 	int32_t intValue;
 
 	fixed_point() {}
-	/*explicit*/ fixed_point(int32_t i) : intValue(i << p) {}
+	/*explicit*/ fixed_point(int i) : intValue(static_cast<int32_t>(i) << p) {}
 	/*explicit*/ fixed_point(float f) : intValue(float2fix<p>(f)) {}
 	/*explicit*/ fixed_point(double f) : intValue(float2fix<p>((float)f)) {}
 
